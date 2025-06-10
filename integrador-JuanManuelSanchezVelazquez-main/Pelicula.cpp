@@ -16,6 +16,12 @@ int Pelicula::buscarPorCalificacion(int calif){
         imprimir();
     }return resultados;
 }
+int Pelicula::setCalificacion(string nom,float calif){
+    if(nom==nombre){
+        calificacion=calif;
+        return 1;
+    }else{return 0;}
+}
 int Pelicula::buscarPorGenero(string gen){
     int resultados=0;
     for(string genero : generos){
@@ -30,5 +36,4 @@ int Pelicula::buscarPorNombre(string nom){
             imprimir();
             return 1;
         }else{return 0;}
-
 }

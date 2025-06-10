@@ -38,6 +38,13 @@ int Serie::buscarPorNombre(string nom){
         }else{return 0;}
 
 }
+int Serie::setCalificacion(string nom, float calif){
+    int resultado=0;
+    for(Episodio *ptrEp:episodios){
+    resultado=ptrEp->setCalificacion(nom,calif);
+    }
+    return resultado;   
+}
 void Serie::agregarEpisodio(string idEpi, string nombreEpi, string fecha_estrenoEpi, int duracionEpi, float calificacionEpi, int numero_episodioIn ,int temporada_perteneceIn){
     Episodio *p = new Episodio(idEpi,nombreEpi,fecha_estrenoEpi,duracionEpi,calificacionEpi,numero_episodioIn,temporada_perteneceIn);
     episodios.push_back(p);

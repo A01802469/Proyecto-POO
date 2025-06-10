@@ -12,6 +12,7 @@ class Contenido{
     virtual int buscarPorNombre(string)=0;
     virtual int buscarPorGenero(string)=0;
     virtual int buscarPorCalificacion(int)=0;
+    virtual int setCalificacion(string,float)=0;
     virtual void imprimir()=0;
 };
 #endif

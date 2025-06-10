@@ -14,9 +14,10 @@ int Episodio::buscarPorCalificacion(int calif){
         imprimir();
     }return resultados;
 }
-void Episodio::buscarPorNombre(string nom, float calif){
+int Episodio::setCalificacion(string nom, float calif){
     if(nom==nombre){
             calificacion=calif;
-        }
+            return 1;
+        }return 0;
 
 }

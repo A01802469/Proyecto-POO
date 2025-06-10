@@ -8,10 +8,24 @@ using std::streamsize;
 
 void Streaming::mostrarVideos(){
     int opcionCaso2;
+    while (true){
+        try{
+    
     cout<<"Mostrar videos por:\n\n\t1.  Calificacion\n\t2.  Genero\n\n\tOpcion:\t";
     cin>>opcionCaso2;
+    if (cin.fail()) { 
+        cin.clear(); 
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        string error="Entrada inválida. Ingrese un numero entero.\n\tIntente nuevamente\n\n";
+        throw error;
+        }
+    if(opcionCaso2!=1&&opcionCaso2!=2){
+        string e("\nSolo se admiten las opciones 1 y 2\n");
+        throw e;
+    }
+    int resultados=0;
     if(opcionCaso2==1){
-        int calif,resultados=0;;
+        int calif;
         while(true){
             try{
             cout<<"Ingresa la calificacion base a buscar: ";
@@ -31,8 +45,7 @@ void Streaming::mostrarVideos(){
                 if(resultados==0){
                 string e("No hay videos con esa calificacion\n\tIntente nuevamente\n");
                 throw e;
-            }
-                break;
+            }else{break;}
             }
             }catch(string e){
                 cout<<"\nError:\n"<<e;
@@ -44,7 +57,6 @@ void Streaming::mostrarVideos(){
         while (true){
         try{
         string genero;
-        int resultados;
         cout<<"Ingresa el genero: ";
         cin>>genero;
         resultados=buscarPorGenero(genero);
@@ -58,6 +70,11 @@ void Streaming::mostrarVideos(){
         }
     }
     }
+    if(resultados!=0){break;}
+    }catch(string e){
+                cout<<"\nError:\n"<<e;
+            }
+        }
 }
 int Streaming::buscarPorCalificacion(int calif){
     int resultados=0;
@@ -135,21 +152,29 @@ void Streaming::buscarPelisPorCalificacion(){
 }*/
 void Streaming::calificarVideo(){
     string nom;
-    int calif,comprobacion=0;
+    int comprobacion=0;
+    float calif;
     while(true){
     try{
     cout<<"\nIngresa la calificacion nueva: ";
-    cin>>calif; 
-    cin.clear();//cin.ignore(numeric_limits<streamsize>::max());
+    cin>>calif;
+    if(cin.fail()){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        string e("Ingrese un valor entero\n\tIntente nuevamente\n");
+        throw e;
+    }
+    if(calif<1||calif>10){
+        string e("Ingrese una calificación entre 1 y 10\n\tIntente nuevamente\n");
+        throw e;
+    }
+    cin.ignore();
     cout<<"Ingresa el nombre del video a calificar: ";
     getline(cin,nom);
     
     for (Contenido *ptrContenido : contenidos){
-        Video *comprobacionVideo=dynamic_cast<Video*>(ptrContenido);
-        if(comprobacionVideo){
-            comprobacion=comprobacionVideo->setCalificacion(nom,calif);
+        comprobacion=ptrContenido->setCalificacion(nom,calif);
         }
-    }
     if(comprobacion==1){
         break;
     }else{
@@ -164,17 +189,17 @@ void Streaming::iniciar(){
     int opcion;
     do{
         try{
-        cout<<"Menu de opciones\n\n1. Cargar un archivo.\n2. Mostrar videos.\n3. Buscar una serie.\n4. Buscar una pelicula por calificacion\n5. Calificar un video\n\t";
+        cout<<"Menu de opciones\n\n1. Cargar un archivo.\n2. Mostrar videos.\n3. Buscar una serie.\n4. Buscar una pelicula por calificacion\n5. Calificar un video\n6. Salir\n\t";
         cin>>opcion;
-        if(opcion<1||opcion>6){
-            string error="Elija una opcion entre 1 y 6\n\tIntente nuevamente\n\n";
-            throw error;
-        }
         if (cin.fail()) { 
         cin.clear(); 
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         string error="Entrada inválida. Ingrese un numero entero.\n\tIntente nuevamente\n\n";
         throw error;
+        }
+        if(opcion<1||opcion>6){
+            string error="Elija una opcion entre 1 y 6\n\tIntente nuevamente\n\n";
+            throw error;
         }
         switch (opcion)
         {

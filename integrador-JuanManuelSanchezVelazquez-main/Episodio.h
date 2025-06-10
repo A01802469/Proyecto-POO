@@ -13,7 +13,7 @@ class Episodio: public Video{
     Episodio(string, string, string, int, float, int,int);
     int buscarPorCalificacion(int);
     void buscarPorGenero(string);
-    void buscarPorNombre(string,float);
     void imprimir();
+    int setCalificacion(string,float);
 };
 #endif

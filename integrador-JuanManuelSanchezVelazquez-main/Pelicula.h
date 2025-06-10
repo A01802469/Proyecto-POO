@@ -13,6 +13,7 @@ class Pelicula: protected Video, public Contenido{
     Pelicula(string, string, int, vector<string>, float, string);/*: Video(id,nombre,fecha_estreno,duracion,calificacion)*/
     int buscarPorCalificacion(int);
     int buscarPorGenero(string);
+    int setCalificacion(string,float);
     int buscarPorNombre(string);
 };
 #endif
