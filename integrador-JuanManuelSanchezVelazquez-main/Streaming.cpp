@@ -111,7 +111,7 @@ void Streaming::busquedaPorSerie(){
     }
     }
 }
-void Streaming::buscarPelisPorCalificacion(){
+int Streaming::buscarPelisPorCalificacion(){
     int calif,resultados=0;
     while(true){
             try{
@@ -132,8 +132,7 @@ void Streaming::buscarPelisPorCalificacion(){
                 for(Contenido *ptrContenido : contenidos){
                 Pelicula *comprobacionPelicula=dynamic_cast<Pelicula*>(ptrContenido);
                 if(comprobacionPelicula){
-                    resultados++;
-                    comprobacionPelicula->buscarPorCalificacion(calif);
+                    resultados=comprobacionPelicula->buscarPorCalificacion(calif);
                   }
                 }
             }
@@ -144,7 +143,7 @@ void Streaming::buscarPelisPorCalificacion(){
             }catch(string e){
                 cout<<"\nError:\n"<<e;
             }
-        }
+        }return resultados;
     
 }
 /*void Streaming::agregarContenido(string idCont, string nombreCont, vector<string> generosCont, float calificacionCont,string fecha_estrenoCont, string nombreEpi,int temporada_perteneceEpi, int num_episodioEpi){

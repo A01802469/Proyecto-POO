@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="lu7M6O9MtYW13m0v7hSQ" name="Page-1">
-        <mxGraphModel dx="-91" dy="-622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="721" dy="-507" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -15,21 +15,6 @@
                 </mxCell>
                 <mxCell id="5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Episodio&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;- numero_episodio:int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- temporada_que pertenece:int&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+Episodio()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+Episodio(string id, string nombre, string fecha_estreno, int duracion, float calificacion, int numero_episodio, int temporada_que_pertenece)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+buscarPorCalificacion(int): void&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;-webkit-text-stroke-color: rgb(0, 0, 0); font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; font-size-adjust: none; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; line-height: normal; font-kerning: none; background-color: rgb(250, 250, 250);&quot; class=&quot;s1&quot;&gt;+&lt;/span&gt;&lt;span style=&quot;font-size: 11px; -webkit-text-stroke-color: rgb(0, 0, 0); font-kerning: none;&quot; class=&quot;s2&quot;&gt;buscarPorNombre (string nom, float calificacion): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;+imprimir(): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;shadow=1;" parent="1" vertex="1">
                     <mxGeometry x="1328.28" y="1940" width="278.09" height="220" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=-0.013;exitY=0.19;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;exitPerimeter=0;fontFamily=Helvetica;" parent="1" source="4" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="828.085" y="1831.98" as="sourcePoint"/>
-                        <mxPoint x="1099.91" y="1331" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="864" y="2148"/>
-                            <mxPoint x="864" y="1331"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="7" value="Tiene" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];shadow=1;" parent="6" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2451" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
                 </mxCell>
                 <mxCell id="8" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="16" target="2" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">

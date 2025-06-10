@@ -2,6 +2,7 @@
 #define STREAMING_H
 #include "Contenido.h"
 class Streaming{
+//private:
 public:
 vector<Contenido*> contenidos;
 //public:
@@ -12,7 +13,9 @@ void mostrarVideos();//
 int buscarPorCalificacion(int);//
 int buscarPorGenero(string);//
 void busquedaPorSerie();//
-void buscarPelisPorCalificacion();//
+int buscarPelisPorCalificacion();//
 void calificarVideo();//
+friend ostream& operator<<(ostream & cout,Punto &p);
+
 };
 #endif
