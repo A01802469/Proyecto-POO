@@ -7,12 +7,12 @@ using std::string;
 using std::cout;
 using std::endl;
 using std::vector;
+using std::ostream;
 class Contenido{
     public:
-    virtual int buscarPorNombre(string)=0;
+    virtual bool buscarPorNombre(string)=0;
     virtual int buscarPorGenero(string)=0;
     virtual int buscarPorCalificacion(int)=0;
     virtual int setCalificacion(string,float)=0;
-    virtual void imprimir()=0;
 };
 #endif

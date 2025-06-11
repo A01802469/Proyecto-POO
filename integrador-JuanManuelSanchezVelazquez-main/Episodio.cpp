@@ -4,8 +4,17 @@ Episodio::Episodio(string idEpi, string nombreEpi, string fecha_estrenoEpi, int 
     numero_episodio=numero_episodioIn;
     temporada_pertenece=temporada_perteneceIn;
 }
+ostream& operator<<(ostream & cout, Episodio &episodio){
+cout<<"\nNombre: "<<episodio.nombre<<endl<<"Calificacion: "<<episodio.calificacion<<endl<<"Duracion: "<<episodio.duracion<<endl<<"Fecha de estreno: "<<episodio.fecha_estreno<<endl;
+}
 void Episodio::imprimir(){
-    cout<<"Nombre: "<<nombre<<endl<<"Calificacion: "<<calificacion<<endl<<"Duracion: "<<duracion<<endl<<"Fecha de estreno: "<<fecha_estreno<<endl;
+    cout<<*this;
+}
+bool Episodio::buscarPorNombre(string nom){
+    if(nombre==nom){
+        return true;
+    }else{return false;}
+
 }
 int Episodio::buscarPorCalificacion(int calif){
     int resultados=0;
@@ -15,9 +24,11 @@ int Episodio::buscarPorCalificacion(int calif){
     }return resultados;
 }
 int Episodio::setCalificacion(string nom, float calif){
+    int resultados=0;
     if(nom==nombre){
             calificacion=calif;
-            return 1;
-        }return 0;
+            resultados++;
+            cout<<"\n\nCalificacion cambiada\n";
+        }return resultados;
 
 }

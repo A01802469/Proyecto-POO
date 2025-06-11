@@ -14,8 +14,9 @@ Serie(string, string, vector<string>);
 int buscarPorCalificacion(int);
 int buscarPorGenero(string);
 void agregarEpisodio(string idEpi, string nombreEpi, string fecha_estrenoEpi, int duracionEpi, float calificacionEpi, int numero_episodioIn ,int temporada_perteneceIn);
-int buscarPorNombre(string);
+bool buscarPorNombre(string);
 int setCalificacion(string,float);
 void imprimir();
+friend ostream& operator<<(ostream & cout, Serie &serie);
 };
 #endif

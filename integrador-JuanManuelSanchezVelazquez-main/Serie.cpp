@@ -5,15 +5,18 @@ Serie::Serie(string idSe, string nombreSe, vector<string>generosSe){
     nombre=nombreSe;
     generos=generosSe;
 }
-void Serie::imprimir(){
-    cout<<"Nombre de la serie: "<<nombre<<endl<<"Generos: "<<endl;
-    for(string genero : generos){
+ostream& operator <<(ostream &cout, Serie &serie){
+cout<<"\n\n\tNombre de la serie: "<<serie.nombre<<endl<<"Generos: "<<endl;
+    for(string genero : serie.generos){
         cout<<genero<<", ";
     }
     cout<<"Episodios: "<<endl;
-    for(Episodio *p:episodios){
-        p->imprimir();
+    for(Episodio *p:serie.episodios){
+        cout<<p;
     }
+}
+void Serie::imprimir(){
+    cout<<*this;
 }
 int Serie::buscarPorCalificacion(int calif){
     int resultados=0;
@@ -31,17 +34,17 @@ int Serie::buscarPorGenero(string gen){
         }
     }return resultados;
 }
-int Serie::buscarPorNombre(string nom){
+
+bool Serie::buscarPorNombre(string nom){
     if(nom==nombre){
-            imprimir();
-            return 1;
-        }else{return 0;}
+            return true;
+        }else{return false;}
 
 }
 int Serie::setCalificacion(string nom, float calif){
     int resultado=0;
     for(Episodio *ptrEp:episodios){
-    resultado=ptrEp->setCalificacion(nom,calif);
+    resultado+=ptrEp->setCalificacion(nom,calif);
     }
     return resultado;   
 }

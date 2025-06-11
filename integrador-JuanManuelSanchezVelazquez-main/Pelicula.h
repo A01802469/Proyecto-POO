@@ -14,6 +14,6 @@ class Pelicula: protected Video, public Contenido{
     int buscarPorCalificacion(int);
     int buscarPorGenero(string);
     int setCalificacion(string,float);
-    int buscarPorNombre(string);
+    bool buscarPorNombre(string);
 };
 #endif

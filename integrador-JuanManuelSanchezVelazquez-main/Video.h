@@ -11,6 +11,5 @@ class Video{
     public:
     Video();
     Video(string,string,string,int,float);
-    int setCalificacion(string,float);
 };
 #endif
