@@ -15,7 +15,7 @@ class Episodio: public Video{
     int buscarPorCalificacion(int);
     void buscarPorGenero(string);
     bool buscarPorNombre(string);
-    friend ostream& operator<<(ostream & cout, Episodio &episodio);
+    friend ostream& operator<<(ostream & os, Episodio &episodio);
     void imprimir();
     int setCalificacion(string,float);
 };

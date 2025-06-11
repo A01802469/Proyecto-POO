@@ -278,6 +278,7 @@ void Streaming::iniciar(){
     int opcion;
     do{
         try{
+        cin.ignore();
         cout<<"\n\n\tMenu de opciones\n\n1. Cargar un archivo.\n2. Mostrar videos.\n3. Buscar una serie.\n4. Buscar una pelicula por calificacion\n5. Calificar un video\n6. Salir\n\t";
         cin>>opcion;
         if (cin.fail()) { 

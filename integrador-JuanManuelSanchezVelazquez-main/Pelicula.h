@@ -15,5 +15,6 @@ class Pelicula: protected Video, public Contenido{
     int buscarPorGenero(string);
     int setCalificacion(string,float);
     bool buscarPorNombre(string);
+    friend ostream& operator<<(ostream &os , Pelicula &pelicula);
 };
 #endif

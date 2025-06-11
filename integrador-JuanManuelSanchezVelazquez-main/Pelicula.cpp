@@ -3,11 +3,15 @@ Pelicula::Pelicula(){}
 Pelicula::Pelicula(string idPeli, string nombrePeli, int duracionPeli,vector<string> generosPeli, float calificacionPeli, string fecha_estrenoPeli): Video(idPeli,nombrePeli,fecha_estrenoPeli,duracionPeli,calificacionPeli){
     generos=generosPeli;
 }
-void Pelicula::imprimir(){
-    cout<<"\n\n\tNombre: "<<nombre<<endl<<"Calificacion: "<<calificacion<<endl<<"Duracion: "<<duracion<<endl<<"Fecha de estreno: "<<fecha_estreno<<endl<<"Generos: "<<endl;
-    for(string genero : generos){
-        cout<<genero<<", ";
+ostream& operator<<(ostream& os, Pelicula &pelicula){
+    os<<"\n\n\tNombre: "<<pelicula.nombre<<endl<<"Calificacion: "<<pelicula.calificacion<<endl<<"Duracion: "<<pelicula.duracion<<endl<<"Fecha de estreno:"<<pelicula.fecha_estreno<<endl<<"Generos: "<<endl;
+    for(string genero : pelicula.generos){
+        os<<genero<<", "<<endl;
     }
+return os;
+}
+void Pelicula::imprimir(){
+    cout<<*this;
 }
 int Pelicula::buscarPorCalificacion(int calif){
     int resultados=0;
