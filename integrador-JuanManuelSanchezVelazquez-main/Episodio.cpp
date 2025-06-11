@@ -4,8 +4,9 @@ Episodio::Episodio(string idEpi, string nombreEpi, string fecha_estrenoEpi, int 
     numero_episodio=numero_episodioIn;
     temporada_pertenece=temporada_perteneceIn;
 }
-ostream& operator<<(ostream & cout, Episodio &episodio){
-cout<<"\nNombre: "<<episodio.nombre<<endl<<"Calificacion: "<<episodio.calificacion<<endl<<"Duracion: "<<episodio.duracion<<endl<<"Fecha de estreno: "<<episodio.fecha_estreno<<endl;
+ostream& operator<<(ostream & os, Episodio &episodio){
+os<<"\nNombre: "<<episodio.nombre<<"\nCalificacion: "<<episodio.calificacion<<"\nDuracion: "<<episodio.duracion<<"\nFecha de estreno: "<<episodio.fecha_estreno<<"\n";
+return os;
 }
 void Episodio::imprimir(){
     cout<<*this;

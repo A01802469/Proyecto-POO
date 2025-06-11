@@ -5,15 +5,16 @@ Serie::Serie(string idSe, string nombreSe, vector<string>generosSe){
     nombre=nombreSe;
     generos=generosSe;
 }
-ostream& operator <<(ostream &cout, Serie &serie){
-cout<<"\n\n\tNombre de la serie: "<<serie.nombre<<endl<<"Generos: "<<endl;
+ostream& operator <<(ostream &os, Serie &serie){
+os<<"\n\n\tNombre de la serie: "<<serie.nombre<<endl<<"Generos: "<<endl;
     for(string genero : serie.generos){
-        cout<<genero<<", ";
+        os<<genero<<", ";
     }
-    cout<<"Episodios: "<<endl;
+    os<<"Episodios: \n";
     for(Episodio *p:serie.episodios){
-        cout<<p;
+        os<<*p;
     }
+    return os;
 }
 void Serie::imprimir(){
     cout<<*this;
