@@ -182,6 +182,7 @@ void Streaming::busquedaPorSerie(){
     string nom;
     while (true){
     try{
+    cin.ignore();
     cout<<"Ingresa el nombre de la serie\n";
     getline(cin,nom);
     int resultados=0;
@@ -224,7 +225,7 @@ int Streaming::buscarPelisPorCalificacion(){
                 for(Contenido *ptrContenido : contenidos){
                 Pelicula *comprobacionPelicula=dynamic_cast<Pelicula*>(ptrContenido);
                 if(comprobacionPelicula){
-                    resultados=comprobacionPelicula->buscarPorCalificacion(calif);
+                    resultados+=comprobacionPelicula->buscarPorCalificacion(calif);
                   }
                 }
             }
