@@ -13,7 +13,6 @@ class Episodio: public Video{
     Episodio();
     Episodio(string, string, string, int, float, int,int);
     int buscarPorCalificacion(int);
-    void buscarPorGenero(string);
     bool buscarPorNombre(string);
     friend ostream& operator<<(ostream & os, Episodio &episodio);
     void imprimir();
